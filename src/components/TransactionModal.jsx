@@ -65,7 +65,7 @@ export default function TransactionModal({ onClose, onSave, initial = null, acco
               {['debit','credit'].map(t => (
                 <button key={t} onClick={() => set('type', t)}
                   style={{
-                    flex: 1, padding: '0.65rem', borderRadius: 'var(--radius-md)', border: 'none', cursor: 'pointer', fontFamily: 'Inter', fontWeight: 600, fontSize: '0.875rem', transition: 'all 0.2s ease',
+                    flex: 1, padding: '0.65rem', borderRadius: 'var(--radius-md)', cursor: 'pointer', fontFamily: 'Inter', fontWeight: 600, fontSize: '0.875rem', transition: 'all 0.2s ease',
                     background: form.type === t ? (t === 'credit' ? 'rgba(74,222,128,0.2)' : 'rgba(248,113,113,0.2)') : 'var(--surface-container)',
                     color: form.type === t ? (t === 'credit' ? '#4ade80' : '#f87171') : 'var(--on-surface-variant)',
                     border: form.type === t ? `1px solid ${t === 'credit' ? 'rgba(74,222,128,0.4)' : 'rgba(248,113,113,0.4)'}` : '1px solid transparent',
