@@ -1,0 +1,163 @@
+.transactions-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+.tx-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tx-header-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Summary */
+.tx-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.tx-stat {
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Drop zone */
+.drop-zone {
+  border: 2px dashed rgba(70, 69, 84, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.drop-zone.drag-active {
+  border-color: var(--primary);
+  background: rgba(192, 193, 255, 0.06);
+}
+
+/* Filters */
+.tx-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tx-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--surface-container);
+  border: 1px solid rgba(70, 69, 84, 0.15);
+  border-radius: var(--radius-full);
+  padding: 0.5rem 1rem;
+}
+
+.category-filters {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Table */
+.tx-table-wrap {
+  padding: 0;
+  overflow: hidden;
+  overflow-x: auto;   /* allow horizontal scroll on small screens */
+}
+
+.tx-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 480px;   /* table won't shrink below this — scrolls instead */
+}
+
+.tx-th {
+  padding: 0.85rem 1.25rem;
+  text-align: left;
+  color: var(--on-surface-variant);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.tx-td {
+  padding: 0.9rem 1.25rem;
+  border-top: 1px solid rgba(70, 69, 84, 0.1);
+  vertical-align: middle;
+}
+
+.tx-row {
+  transition: background 0.15s ease;
+}
+.tx-row:hover {
+  background: var(--surface-container-low);
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+  /* Hide Account column at medium sizes */
+  .hide-col-md {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .tx-summary-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .tx-stat {
+    padding: 0.85rem 1rem;
+  }
+  .drop-zone {
+    padding: 1.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tx-summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .tx-stat {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Utility: hide text label on very small screens */
+.hide-on-mobile {
+  display: inline;
+}
+
+@media (max-width: 420px) {
+  .hide-on-mobile {
+    display: none;
+  }
+}
